@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./utils/auth";
 
 const API = axios.create({
-  baseURL: "http://localhost:10000",
+  baseURL: "https://real-time-chat-backend.onrender.com",  // ✅ Replace with actual Render backend URL
 });
 
 API.interceptors.request.use((config) => {
