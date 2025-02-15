@@ -7,7 +7,7 @@ export const connectSocket = () => {
   if (!socket || !socket.connected) {
     console.log("🔌 Connecting WebSocket...");
     const token = localStorage.getItem("chat_token"); // Get token from local storage
-    socket = io("http://localhost:5000", {
+    socket = io("http://localhost:10000", {
       transports: ["websocket"],
       auth: { token }, // Send token for authentication
     });
