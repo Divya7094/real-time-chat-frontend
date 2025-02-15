@@ -1,0 +1,83 @@
+.chat-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Message Bubbles */
+.chat-message {
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 5px 0;
+  max-width: 75%;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+/* ✅ Sent Messages - Right (Darker Blue) */
+.sent {
+  background-color: #007AFF; /* iMessage-style blue */
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* ✅ Received Messages - Left (Soft Grey) */
+.received {
+  background-color: #F0F0F0;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* ✅ Chat Input */
+.chat-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-input button {
+  margin-left: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #007AFF; /* Match sent message color */
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ✅ Message Status Colors */
+.status-sent {
+  color: #A0A0A0; /* Light grey for subtle effect */
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.status-delivered {
+  color: #28A745; /* Bright green for visibility */
+  font-size: 12px;
+  margin-left: 10px;
+  font-weight: bold;
+}
