@@ -11,7 +11,7 @@ const Login = () => {
     try {
       console.log("🔹 Sending Login Request:", { username, password });
 
-      const response = await fetch("https://real-time-chat-app-backend-l2sp.onrender.com/login", {
+      const response = await fetch("https://real-time-chat-backend.onrender.com//login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -23,7 +23,6 @@ const Login = () => {
       if (response.ok) {
         localStorage.setItem("chat_token", data.token);
         localStorage.setItem("chat_username", data.username);
-        connectSocket();
         navigate("/chat"); // ✅ Redirect to chat after login
       } else {
         setError("Login failed: " + data.message);
