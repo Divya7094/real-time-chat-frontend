@@ -1,7 +1,7 @@
 import React, { createContext, useEffect } from "react";
 import io from "socket.io-client";
 
-const SERVER_URL = "wss://real-time-chat-app-backend-production.up.railway.app"; // ✅ Ensure this is correct
+const SERVER_URL = "https://real-time-chat-app-backend-production.up.railway.app"; // ✅ Ensure this is correct
 const socket = io(SERVER_URL, { transports: ["websocket"] });
 
 export const SocketContext = createContext(socket);

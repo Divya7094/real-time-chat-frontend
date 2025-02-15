@@ -8,7 +8,7 @@ export const connectSocket = () => {
     console.log("🔌 Connecting WebSocket...");
     const token = localStorage.getItem("chat_token");
     console.log("📜 Sending Token:", token); // Get token from local storage
-    socket = io("wss://real-time-chat-backend.onrender.com", {
+    socket = io("https://real-time-chat-app-backend-production.up.railway.app", {
       transports: ["websocket"],
       auth: { token },
       reconnection: true,
