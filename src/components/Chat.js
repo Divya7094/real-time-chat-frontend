@@ -82,8 +82,7 @@ const Chat = () => {
       <button onClick={handleLogout}>Logout</button>
       <div className="chat-messages">
         {messages.map((msg, index) => (
-          <p key={index} className={`chat-message ${msg.username === username ? "sent" : "received"}`}>
-
+          <p key={index} className={`chat-message ${msg.username.toLowerCase() === username?.toLowerCase() ? "sent" : "received"}`}>
             <strong>{msg.username}:</strong> {msg.message} <br />
             <small>{new Date(msg.timestamp).toLocaleString()}</small>
             <span className={msg.status === "Delivered" ? "status-delivered" : "status-sent"}>

@@ -7,16 +7,16 @@ import Signup from "./components/Signup";
 
 const App = () => {
   return (
-    <SocketProvider>
-      <Router>
+    <Router>  {/* ✅ Router should be the outermost wrapper */}
+      <SocketProvider>
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} /> {/* Redirect to Login */}
           <Route path="/chat" element={<Chat />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
-      </Router>
-    </SocketProvider>
+      </SocketProvider>
+    </Router>
   );
 };
 
