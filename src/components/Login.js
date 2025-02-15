@@ -23,6 +23,7 @@ const Login = () => {
       if (response.ok) {
         localStorage.setItem("chat_token", data.token);
         localStorage.setItem("chat_username", data.username);
+        connectSocket();
         navigate("/chat"); // ✅ Redirect to chat after login
       } else {
         setError("Login failed: " + data.message);

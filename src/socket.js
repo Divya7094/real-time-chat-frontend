@@ -6,7 +6,8 @@ let socket = null;
 export const connectSocket = () => {
   if (!socket || !socket.connected) {
     console.log("🔌 Connecting WebSocket...");
-    const token = localStorage.getItem("chat_token"); // Get token from local storage
+    const token = localStorage.getItem("chat_token");
+    console.log("📜 Sending Token:", token); // Get token from local storage
     socket = io("wss://real-time-chat-backend.onrender.com", {
       transports: ["websocket"],
       auth: { token },
