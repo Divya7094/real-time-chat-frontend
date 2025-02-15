@@ -7,9 +7,16 @@ export const connectSocket = () => {
   if (!socket || !socket.connected) {
     console.log("🔌 Connecting WebSocket...");
     const token = localStorage.getItem("chat_token"); // Get token from local storage
-    socket = io("https://real-time-chat-backend.onrender.com", {
+    socket = io("https://real-time-chat-app-backend-l2sp.onrender.com/", {
       transports: ["websocket"],
-      auth: { token }, // Send token for authentication
+      auth: { token },
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+      // Add withCredentials if you're using cookies
+      withCredentials: true,
+      // Add error handling
+      timeout: 10000 // Send token for authentication
     });
 
     socket.on("connect", () => console.log("✅ WebSocket Connected:", socket.id));
