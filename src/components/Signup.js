@@ -9,7 +9,7 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch("https://real-time-chat-app-backend-production.up.railway.app/signup", {
+      const response = await fetch("https://real-time-chat-app-backend-l2sp.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
